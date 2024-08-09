@@ -142,7 +142,7 @@ export function ModelsView() {
 							# Upload your model directly to SurrealDB
 							SurMlFile.upload(
 								path="./model.surml",
-								url="${connectionUri(connection, 'ml/import')}",
+								url="${connectionUri(connection, 'ml/import').replace(/^ws/, 'http')}",
 								chunk_size=36864,
 								namespace="${connection.namespace}",
 								database="${connection.database}",
